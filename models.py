@@ -663,7 +663,7 @@ class EmptySourceData(SubjectData):
     pass
 
 class S_12Data(SubjectData):
-    uid = models.ForeignKey(User, to_field='username', db_column='user_id', blank=True, null=True)  
+    #uid = models.ForeignKey(User, to_field='username', db_column='user_id', blank=True, null=True)  
     First_Name = models.CharField(max_length=20, null=True, blank=True)
     UMID = models.IntegerField(null=True, blank=True)
     uniq_name = models.CharField(max_length=20, null=True, blank=True)
