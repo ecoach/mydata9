@@ -1,10 +1,10 @@
 from djangotailoring.subjects import DjangoSubjectLoader
-from mydata1.models import S_12Data
+from mydata4.models import Source1
 
 class ECoachSubjectLoader(DjangoSubjectLoader):
     sources = {
         #'MTS_SOURCE_NAME': MODEL_OBJECT_CLASS ... the table name should matche the class name
-        'S_12': S_12Data,
+        'Source1': Source1,
     }
 
 
