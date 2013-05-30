@@ -73,7 +73,7 @@ TEXT_COURSE_CHOICES = (
 class Source1(SubjectData):
     # add meta property
     class Meta: 
-        db_table = 'source1'
+        db_table = 'mydata_source1'
     Name_First = models.CharField(max_length=10, null=True, blank=True)
     Opt_Out = models.CharField(max_length=3, choices=TEXT_OPT_OUT_CHOICES, null=True, blank=True)
     Enrolled = models.IntegerField(null=True, blank=True)
