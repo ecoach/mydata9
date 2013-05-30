@@ -21,8 +21,7 @@ DOMAIN = 'localhost'
 DOMAIN_MTS = '/' + MPROJ_NAME + '/'
 URL_SUB = MPROJ_NAME + '/'
 
-
-
+MYDATA = 'mydata4'
 
 import django.template
 django.template.add_to_builtins('django.templatetags.future')
