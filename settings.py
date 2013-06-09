@@ -1,4 +1,9 @@
 # Django settings for ecoach project.
+import django.template
+django.template.add_to_builtins('django.templatetags.future')
+
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 # rename imports
 #import mydata4
@@ -12,6 +17,10 @@ DB_NAME     = 'ecoach4'
 DPROJ_NAME  = 'mydata4'
 MPROJ_NAME  = 'mts4'
 
+#from os.path import abspath, dirname, join
+#SETTINGS_PATH = abspath(dirname(__file__))
+#SOME_SUB_PATH = abspath(join(SETTINGS_PATH, '../'))
+
 DIR_HOME = '/Users/jtritz/'
 DIR_PROJ = DIR_HOME + "/bitbucket/ecoach_webapps/"
 DIR_COACH = DIR_PROJ + CPROJ_NAME + "/"
@@ -22,12 +31,6 @@ DOMAIN_MTS = '/' + MPROJ_NAME + '/'
 URL_SUB = MPROJ_NAME + '/'
 
 MYDATA = 'mydata4'
-
-import django.template
-django.template.add_to_builtins('django.templatetags.future')
-
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -128,7 +131,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'mycoach.urls'
+ROOT_URLCONF = 'myselector.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -136,6 +139,7 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     #DIR_PROJ + CPROJ_NAME + '/templates/mycoach',
     DIR_PROJ + 'templates',
+    '/Users/jtritz/bitbucket/ecoach_webapps/mycoach/templates/mycoach',
 )
 
 INSTALLED_APPS = (
@@ -146,11 +150,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    #'south',
+    'south',
     CPROJ_NAME,
     DPROJ_NAME,
     #'mypump',
     #'myemailer',
+    #'myselector',
     'djangotailoring',
     'djangotailoring.surveys',
     'djangotailoring.tracking',
