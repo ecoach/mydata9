@@ -17,11 +17,11 @@ urlpatterns = patterns('',
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
 
     # staff apps
-    url(r'^staff/',         login_required('mypublisher.urls')),
-    #url(r'^publisher/',     login_required(mypublisher.urls)),
+    url(r'^staff/',         include('mypublisher.urls', namespace='mypublisher')),
+    url(r'^publisher/',     include('mypublisher.urls', namespace='mypublisher')),
     #url(r'^copycat/',       login_required(mycopycat.urls)),
     #url(r'^usage/',         login_required(myusage.urls)),
-    url(r'^upload/',        login_required('myloader.urls')),
+    #url(r'^upload/',        include('myloader.urls', namespace='myloader')),
     #url(r'^download/',      login_required(myextractor.urls)),
     #url(r'^curator/',       login_required(mycurator.urls)),
     #url(r'^emailer/',       login_required('myemailer.urls')),
@@ -29,6 +29,6 @@ urlpatterns = patterns('',
 
     # message project
     #url(r'^',               include('mycoach.urls', namespace='mycoach')),
-    url(r'^',               include('mycoach.urls')),
+    url(r'^',               include('mycoach.urls', namespace='mycoach')),
 )
 
