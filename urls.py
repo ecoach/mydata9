@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
 
     # staff apps
-    url(r'^staff/',         include('mypublisher.urls', namespace='mypublisher')),
+    url(r'^staff/',         include('mypublisher.urls', namespace='mystaff')),
     url(r'^publisher/',     include('mypublisher.urls', namespace='mypublisher')),
     #url(r'^copycat/',       login_required(mycopycat.urls)),
     #url(r'^usage/',         login_required(myusage.urls)),
