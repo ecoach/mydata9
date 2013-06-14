@@ -19,12 +19,12 @@ urlpatterns = patterns('',
     # staff apps
     url(r'^staff/',         include('mypublisher.urls', namespace='mystaff')),
     url(r'^publisher/',     include('mypublisher.urls', namespace='mypublisher')),
+    #url(r'^upload/',        include('myloader.urls', namespace='myloader')),
+    #url(r'^emailer/',       include('myemailer.urls', namespace='myemailer')),
     #url(r'^copycat/',       login_required(mycopycat.urls)),
     #url(r'^usage/',         login_required(myusage.urls)),
-    #url(r'^upload/',        include('myloader.urls', namespace='myloader')),
     #url(r'^download/',      login_required(myextractor.urls)),
     #url(r'^curator/',       login_required(mycurator.urls)),
-    #url(r'^emailer/',       login_required('myemailer.urls')),
     #url(r'^logger/',        login_required(mylogger.urls)),
 
     # message project
