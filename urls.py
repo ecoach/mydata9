@@ -25,7 +25,7 @@ urlpatterns = patterns('',
     #url(r'^copycat/',       login_required(mycopycat.urls)),
     #url(r'^download/',      login_required(myextractor.urls)),
     #url(r'^curator/',       login_required(mycurator.urls)),
-    #url(r'^logger/',        login_required(mylogger.urls)),
+    #url(r'^logger/',        include('mylogger.urls', namespace='mylogger')),
 
     # message project
     #url(r'^',               include('mycoach.urls', namespace='mycoach')),
