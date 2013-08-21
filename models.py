@@ -8,15 +8,21 @@ from djangotailoring.models import SubjectData
 
 # python ../manage.py makemtsmodel > MODEL.OUT (results go below here)
 
-TEXT_REASON_CLASS_CHOICES = (
-    ('Physics_req', 'I am considering physics as my concentration'),
-    ('Concentration_req', 'This is the physics course required by my concentration'),
-    ('Grad_req', 'I need to take physics to prepare for my graduate/professional program'),
-    ('NS_Credit', 'For Natural Science credit'),
-    ('Interest', "I'm taking this class because of my interest in physics"),
+INT_SUBJECT_INTEREST_CHOICES = (
+    ('0', '0<br>Not at all interested'),
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3'),
+    ('4', '4'),
+    ('5', '5'),
+    ('6', '6'),
+    ('7', '7'),
+    ('8', '8'),
+    ('9', '9'),
+    ('10', '10<br>Extremely interested'),
 )
 
-LETTERS_TO_INTS_CHOICES = (
+INT_TO_LETTER_EXPECTED_GRADE_CHOICES = (
     ('1', 'C- or lower'),
     ('2', 'C'),
     ('3', 'C+'),
@@ -27,23 +33,29 @@ LETTERS_TO_INTS_CHOICES = (
     ('8', 'A or A+'),
 )
 
-TEXT_COURSE_CHOICES = (
-    ('135', 'Physics 135'),
-    ('235', 'Physics 235'),
-    ('140', 'Physics 140'),
-    ('240', 'Physics 240'),
+CTEXT_COLLEGE_CHOICES = (
+    ('LSA', 'LSA'),
+    ('Engineering', 'Engineering'),
+    ('Kinesiology', 'Kinesiology'),
+    ('Other', 'Other'),
 )
 
-_SEMESTERS_COMPLETED_CHOICES = (
-    ('9', 'More than 8 semesters'),
-)
-
-_GENDER_CHOICES = (
+CTEXT_GENDER_CHOICES = (
     ('M', 'Male'),
     ('F', 'Female'),
 )
 
-_CONCENTRATE_CHOICES = (
+INT_MLECTUREBOOK_CHOICES = (
+    ('0', 'none'),
+    ('1', 'hw'),
+    ('2', 'both'),
+)
+
+CINT_SEMSESTERS_COMPLETED_CHOICES = (
+    ('9', 'More than 8 semesters'),
+)
+
+CTEXT_COLLEGE_CONCENTRATE_CHOICES = (
     ('Engineering', 'Engineering'),
     ('Physics', 'Physics/Astrophysics'),
     ('Chemistry', 'Chemistry'),
@@ -61,39 +73,121 @@ _CONCENTRATE_CHOICES = (
     ('Other', 'Other'),
 )
 
+CTEXT_POST_COLLEGE_CHOICES = (
+    ('Employment', 'Employment'),
+    ('Med_School', 'Medical School or other Health-related Professional School'),
+    ('Dent_School', 'Dental School'),
+    ('Education', 'Education (teaching, policy, or a certification program)'),
+    ('Grad_Life_Sci', 'Graduate School in a Life Science discipline'),
+    ('Grad_Other', 'Graduate School in another discipline'),
+    ('IDK', "Unsure/I don't know"),
+    ('Other', 'Other'),
+)
+
+INT_YES_NO_CHOICES = (
+    ('0', 'no'),
+    ('1', 'yes'),
+)
+
 TEXT_OPT_OUT_CHOICES = (
     ('In', 'Yes, take me to the survey now!'),
     ('Out', "No thanks, I'll opt out and understand that if I use ecaoch it will only offer generic advice."),
 )
 
-_HIGH_SCHOOL_CUMGPA_CHOICES = (
-    ('2_0', 'Less than 2.0'),
-    ('2_1', '2.1'),
-    ('2_2', '2.2'),
-    ('2_3', '2.3'),
-    ('2_4', '2.4'),
-    ('2_5', '2.5'),
-    ('2_6', '2.6'),
-    ('2_7', '2.7'),
-    ('2_8', '2.8'),
-    ('2_9', '2.9'),
-    ('3_0', '3.0'),
-    ('3_1', '3.1'),
-    ('3_2', '3.2'),
-    ('3_3', '3.3'),
-    ('3_4', '3.4'),
-    ('3_5', '3.5'),
-    ('3_6', '3.6'),
-    ('3_7', '3.7'),
-    ('3_8', '3.8'),
-    ('3_9', '3.9'),
-    ('4_0', '4.0'),
+INT_TRUE_FALSE_CHOICES = (
+    ('1', 'True'),
+    ('0', 'False'),
 )
 
-_EMPLOYMENT_CHOICES = (
+INT_CONFIDENCE_CHOICES = (
+    ('1', 'very doubtful'),
+    ('2', 'somewhat doubtful'),
+    ('3', 'somewhat confident'),
+    ('4', 'confident'),
+    ('5', 'very confident'),
+)
+
+CINT_GPA_CHOICES = (
+    ('20', '2.0 or lower'),
+    ('21', '2.1'),
+    ('22', '2.2'),
+    ('23', '2.3'),
+    ('24', '2.4'),
+    ('25', '2.5'),
+    ('26', '2.6'),
+    ('27', '2.7'),
+    ('28', '2.8'),
+    ('29', '2.9'),
+    ('30', '3.0'),
+    ('31', '3.1'),
+    ('32', '3.2'),
+    ('33', '3.3'),
+    ('34', '3.4'),
+    ('35', '3.5'),
+    ('36', '3.6'),
+    ('37', '3.7'),
+    ('38', '3.8'),
+    ('39', '3.9'),
+    ('40', '4.0'),
+)
+
+INT_MTEXTBOOK_CHOICES = (
+    ('0', 'none'),
+    ('1', 'book'),
+    ('2', 'pack'),
+)
+
+CTEXT_EMPLOYMENT_STATUS_CHOICES = (
     ('No_Job', 'I do not have a job'),
     ('Part_Time', 'I work a part-time job (20 hours or less a week)'),
     ('Full_Time', 'I work a full-time job (more than 20 hours a week)'),
+)
+
+CTEXT_YES_NO_CHOICES = (
+    ('Yes', 'Yes'),
+    ('No', 'No'),
+)
+
+CTEXT_INVOLVED_IN_CHOICES = (
+    ('Greek', 'Greek Life (Sororities/Fraternities)'),
+    ('Sports', 'Sports/Club Sports'),
+    ('Religious', 'Religious Organizations'),
+    ('Research', 'Research (Thesis, UROP, Lab work)'),
+    ('Volunteering', 'Volunteering'),
+    ('Music_Art', 'Music/Art'),
+    ('Other', 'Other Student Clubs/Organzations'),
+)
+
+INT_MYELLOW_CHOICES = (
+    ('0', 'none'),
+    ('1', 'printed'),
+    ('2', 'card'),
+)
+
+CTEXT_CLASS_STANDING_CHOICES = (
+    ('Freshman', 'Freshman'),
+    ('Sophomore', 'Sophomore'),
+    ('Junior', 'Junior'),
+    ('Senior', 'Senior'),
+)
+
+INT_CONFIDENCE_IN_ABLILITY_CHOICES = (
+    ('0', '0<br>Not at all confident'),
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3'),
+    ('4', '4'),
+    ('5', '5'),
+    ('6', '6'),
+    ('7', '7'),
+    ('8', '8'),
+    ('9', '9'),
+    ('10', '10<br>Extremely confident'),
+)
+
+TEXT_GENDER_CHOICES = (
+    ('M', 'Male'),
+    ('F', 'Female'),
 )
 
 INT_SEMESTER_FREQ_CHOICES = (
@@ -104,31 +198,18 @@ INT_SEMESTER_FREQ_CHOICES = (
     ('4', 'multiple times per week'),
 )
 
-_CUM_GPA_SURVEY_CHOICES = (
-    ('2_0', '2.0 or lower'),
-    ('2_1', '2.1'),
-    ('2_2', '2.2'),
-    ('2_3', '2.3'),
-    ('2_4', '2.4'),
-    ('2_5', '2.5'),
-    ('2_6', '2.6'),
-    ('2_7', '2.7'),
-    ('2_8', '2.8'),
-    ('2_9', '2.9'),
-    ('3_0', '3.0'),
-    ('3_1', '3.1'),
-    ('3_2', '3.2'),
-    ('3_3', '3.3'),
-    ('3_4', '3.4'),
-    ('3_5', '3.5'),
-    ('3_6', '3.6'),
-    ('3_7', '3.7'),
-    ('3_8', '3.8'),
-    ('3_9', '3.9'),
-    ('4_0', '4.0'),
+INT_TO_LETTER_GOAL_GRADE_CHOICES = (
+    ('1', 'C- or lower'),
+    ('2', 'C'),
+    ('3', 'C+'),
+    ('4', 'B-'),
+    ('5', 'B'),
+    ('6', 'B+'),
+    ('7', 'A-'),
+    ('8', 'A or A+'),
 )
 
-_BIRTHMO_CHOICES = (
+CINT_BDAY_MONTH_CHOICES = (
     ('-1', 'Month'),
     ('1', 'January'),
     ('2', 'February'),
@@ -144,33 +225,7 @@ _BIRTHMO_CHOICES = (
     ('12', 'December'),
 )
 
-INT_YES_NO_CHOICES = (
-    ('0', 'no'),
-    ('1', 'yes'),
-)
-
-TRUE_FALSE_INT_CHOICES = (
-    ('1', 'true'),
-    ('0', 'false'),
-)
-
-_POST_COLLEGE_CHOICES = (
-    ('Employment', 'Employment'),
-    ('Med_School', 'Medical School or other Health-related Professional School'),
-    ('Dent_School', 'Dental School'),
-    ('Education', 'Education (teaching, policy, or a certification program)'),
-    ('Grad_Life_Sci', 'Graduate School in a Life Science discipline'),
-    ('Grad_Other', 'Graduate School in another discipline'),
-    ('IDK', "Unsure/I don't know"),
-    ('Other', 'Other'),
-)
-
-INT_TRUE_FALSE_CHOICES = (
-    ('1', 'True'),
-    ('0', 'False'),
-)
-
-_PARENT_ED_CHOICES = (
+CTEXT_PARENT_ED_CHOICES = (
     ('Less_HS', 'Less than High School'),
     ('HS', 'High School/GED'),
     ('Some_College', 'Some College'),
@@ -181,64 +236,18 @@ _PARENT_ED_CHOICES = (
     ('Professional', 'Professional Degree (MD, JD)'),
 )
 
-INTS_TO_LETTERS_W_ARTICLES_CHOICES = (
-    ('1', 'C- or lower'),
-    ('2', 'C'),
-    ('3', 'C+'),
-    ('4', 'B-'),
-    ('5', 'B'),
-    ('6', 'B+'),
-    ('7', 'A-'),
-    ('8', 'A or A+'),
-)
-
-INT_CONFIDENCE_CHOICES = (
-    ('1', 'very doubtful'),
-    ('2', 'somewhat doubtful'),
-    ('3', 'somewhat confident'),
-    ('4', 'confident'),
-    ('5', 'very confident'),
-)
-
-_INVOLVED_IN_CHOICES = (
-    ('Greek', 'Greek Life (Sororities/Fraternities)'),
-    ('Sports', 'Sports/Club Sports'),
-    ('Religious', 'Religious Organizations'),
-    ('Research', 'Research (Thesis, UROP, Lab work)'),
-    ('Volunteering', 'Volunteering'),
-    ('Music_Art', 'Music/Art'),
-    ('Other', 'Other Student Clubs/Organzations'),
-)
-
-TEXT_GENDER_CHOICES = (
-    ('M', 'Male'),
-    ('F', 'Female'),
-)
-
-_CLASS_STANDING_CHOICES = (
-    ('Freshman', 'Freshman'),
-    ('Sophomore', 'Sophomore'),
-    ('Junior', 'Junior'),
-    ('Senior', 'Senior'),
-)
-
-_COLLEGE_CHOICES = (
-    ('LSA', 'LSA'),
-    ('Engineering', 'Engineering'),
-    ('Kinesiology', 'Kinesiology'),
-    ('Other', 'Other'),
-)
-
-_DECLARED_CHOICES = (
-    ('Yes', 'Yes'),
-    ('No', 'No'),
-)
-
 
 class Source1(SubjectData):
     # add meta property
     class Meta: 
         db_table = 'mydata_source1'
+    hw_hours = models.FloatField(null=True, blank=True)
+    oh_expected = models.IntegerField(null=True, blank=True)
+    study_partner = models.IntegerField(null=True, blank=True)
+    Subject_Interest = models.IntegerField(null=True, blank=True)
+    time_expectation = models.IntegerField(null=True, blank=True)
+    Confidence = models.IntegerField(null=True, blank=True)
+    confidence_grade = models.IntegerField(null=True, blank=True)
     GTD_01 = models.IntegerField(null=True, blank=True)
     GTD_02 = models.IntegerField(null=True, blank=True)
     GTD_03 = models.IntegerField(null=True, blank=True)
@@ -267,9 +276,9 @@ class Source1(SubjectData):
     gb_hw10 = models.FloatField(null=True, blank=True)
     gb_hw11 = models.FloatField(null=True, blank=True)
     gb_hw_extra = models.FloatField(null=True, blank=True)
-    gb_exam1 = models.IntegerField(null=True, blank=True)
-    gb_exam2 = models.IntegerField(null=True, blank=True)
-    gb_final = models.IntegerField(null=True, blank=True)
+    gb_exam1 = models.FloatField(null=True, blank=True)
+    gb_exam2 = models.FloatField(null=True, blank=True)
+    gb_final = models.FloatField(null=True, blank=True)
     gb_lab00_attend = models.IntegerField(null=True, blank=True)
     gb_lab01_attend = models.IntegerField(null=True, blank=True)
     gb_lab02_attend = models.IntegerField(null=True, blank=True)
@@ -297,10 +306,17 @@ class Source1(SubjectData):
     gb_prelab11 = models.IntegerField(null=True, blank=True)
     gb_prelab12 = models.IntegerField(null=True, blank=True)
     GSI_Name = models.CharField(max_length=20, null=True, blank=True)
-    GSI_heshe = models.CharField(max_length=20, null=True, blank=True)
     dist_values = models.CharField(max_length=20, null=True, blank=True)
     Goal_Grade = models.IntegerField(null=True, blank=True)
     Expected_Grade = models.IntegerField(null=True, blank=True)
+    mcalculator = models.IntegerField(null=True, blank=True)
+    mamazonlecture = models.IntegerField(null=True, blank=True)
+    mlecturebook = models.IntegerField(null=True, blank=True)
+    mamazonlab = models.IntegerField(null=True, blank=True)
+    mopenmi = models.IntegerField(null=True, blank=True)
+    mopenmilab = models.IntegerField(null=True, blank=True)
+    mtextbook = models.IntegerField(null=True, blank=True)
+    myellow = models.IntegerField(null=True, blank=True)
 
 class EmptySource(SubjectData):
     pass
@@ -312,12 +328,12 @@ class Common1(SubjectData):
     First_Name = models.CharField(max_length=20, null=True, blank=True)
     Last_Name = models.CharField(max_length=20, null=True, blank=True)
     uniqname = models.CharField(max_length=20, null=True, blank=True)
-    Gender = models.CharField(max_length=1, choices=_GENDER_CHOICES, null=True, blank=True)
+    Gender = models.CharField(max_length=1, choices=CTEXT_GENDER_CHOICES, null=True, blank=True)
     BirthDay = models.IntegerField(null=True, blank=True)
     BirthMo = models.IntegerField(null=True, blank=True)
     BirthYr = models.IntegerField(null=True, blank=True)
     Semesters_Completed = models.IntegerField(null=True, blank=True)
-    College = models.CharField(max_length=11, choices=_COLLEGE_CHOICES, null=True, blank=True)
+    College = models.CharField(max_length=11, choices=CTEXT_COLLEGE_CHOICES, null=True, blank=True)
     College_Other = models.CharField(max_length=30, null=True, blank=True)
     Concentrate__Engineering = models.NullBooleanField()
     Concentrate__Physics = models.NullBooleanField()
@@ -334,11 +350,11 @@ class Common1(SubjectData):
     Concentrate__Education = models.NullBooleanField()
     Concentrate__IDK = models.NullBooleanField()
     Concentrate__Other = models.NullBooleanField()
-    Concentrate_Other = models.TextField(null=True, blank=True)
-    Declared = models.CharField(max_length=3, choices=_DECLARED_CHOICES, null=True, blank=True)
-    Class_Standing = models.CharField(max_length=9, choices=_CLASS_STANDING_CHOICES, null=True, blank=True)
-    Cum_GPA_Survey = models.CharField(max_length=3, choices=_CUM_GPA_SURVEY_CHOICES, null=True, blank=True)
-    Employment = models.CharField(max_length=9, choices=_EMPLOYMENT_CHOICES, null=True, blank=True)
+    Concentrate_Other = models.CharField(max_length=30, null=True, blank=True)
+    Declared = models.CharField(max_length=3, choices=CTEXT_YES_NO_CHOICES, null=True, blank=True)
+    Class_Standing = models.CharField(max_length=9, choices=CTEXT_CLASS_STANDING_CHOICES, null=True, blank=True)
+    Cum_GPA_Survey = models.IntegerField(null=True, blank=True)
+    Employment = models.CharField(max_length=9, choices=CTEXT_EMPLOYMENT_STATUS_CHOICES, null=True, blank=True)
     Involved_In__Greek = models.NullBooleanField()
     Involved_In__Sports = models.NullBooleanField()
     Involved_In__Religious = models.NullBooleanField()
@@ -346,9 +362,9 @@ class Common1(SubjectData):
     Involved_In__Volunteering = models.NullBooleanField()
     Involved_In__Music_Art = models.NullBooleanField()
     Involved_In__Other = models.NullBooleanField()
-    Other_Commitment = models.TextField(null=True, blank=True)
-    Post_College = models.CharField(max_length=13, choices=_POST_COLLEGE_CHOICES, null=True, blank=True)
-    Parent_Ed = models.CharField(max_length=14, choices=_PARENT_ED_CHOICES, null=True, blank=True)
-    High_School_CumGPA = models.CharField(max_length=3, choices=_HIGH_SCHOOL_CUMGPA_CHOICES, null=True, blank=True)
+    Other_Commitment = models.CharField(max_length=30, null=True, blank=True)
+    Post_College = models.CharField(max_length=13, choices=CTEXT_POST_COLLEGE_CHOICES, null=True, blank=True)
+    Parent_Ed = models.CharField(max_length=14, choices=CTEXT_PARENT_ED_CHOICES, null=True, blank=True)
+    High_School_CumGPA = models.IntegerField(null=True, blank=True)
 
 
