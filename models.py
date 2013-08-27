@@ -8,29 +8,26 @@ from djangotailoring.models import SubjectData
 
 # python ../manage.py makemtsmodel > MODEL.OUT (results go below here)
 
-INT_SUBJECT_INTEREST_CHOICES = (
-    ('0', '0<br>Not at all interested'),
-    ('1', '1'),
-    ('2', '2'),
-    ('3', '3'),
-    ('4', '4'),
-    ('5', '5'),
-    ('6', '6'),
-    ('7', '7'),
-    ('8', '8'),
-    ('9', '9'),
-    ('10', '10<br>Extremely interested'),
+INT_CHECK_BOX_CHOICES = (
+    ('1', 'True'),
+)
+
+CTEXT_EMPLOYMENT_STATUS_CHOICES = (
+    ('No_Job', 'I do not have a job'),
+    ('Part_Time', 'I work a part-time job (20 hours or less a week)'),
+    ('Full_Time', 'I work a full-time job (more than 20 hours a week)'),
 )
 
 INT_TO_LETTER_EXPECTED_GRADE_CHOICES = (
-    ('1', 'C- or lower'),
-    ('2', 'C'),
-    ('3', 'C+'),
-    ('4', 'B-'),
-    ('5', 'B'),
-    ('6', 'B+'),
-    ('7', 'A-'),
-    ('8', 'A or A+'),
+    ('5', 'C- or lower'),
+    ('6', 'C'),
+    ('7', 'C+'),
+    ('8', 'B-'),
+    ('9', 'B'),
+    ('10', 'B+'),
+    ('11', 'A-'),
+    ('12', 'A'),
+    ('13', 'A+'),
 )
 
 CTEXT_COLLEGE_CHOICES = (
@@ -137,10 +134,18 @@ INT_MTEXTBOOK_CHOICES = (
     ('2', 'pack'),
 )
 
-CTEXT_EMPLOYMENT_STATUS_CHOICES = (
-    ('No_Job', 'I do not have a job'),
-    ('Part_Time', 'I work a part-time job (20 hours or less a week)'),
-    ('Full_Time', 'I work a full-time job (more than 20 hours a week)'),
+INT_SUBJECT_INTEREST_CHOICES = (
+    ('0', '0<br>Not at all interested'),
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3'),
+    ('4', '4'),
+    ('5', '5'),
+    ('6', '6'),
+    ('7', '7'),
+    ('8', '8'),
+    ('9', '9'),
+    ('10', '10<br>Extremely interested'),
 )
 
 CTEXT_YES_NO_CHOICES = (
@@ -199,14 +204,15 @@ INT_SEMESTER_FREQ_CHOICES = (
 )
 
 INT_TO_LETTER_GOAL_GRADE_CHOICES = (
-    ('1', 'C- or lower'),
-    ('2', 'C'),
-    ('3', 'C+'),
-    ('4', 'B-'),
-    ('5', 'B'),
-    ('6', 'B+'),
-    ('7', 'A-'),
-    ('8', 'A or A+'),
+    ('5', 'C- or lower'),
+    ('6', 'C'),
+    ('7', 'C+'),
+    ('8', 'B-'),
+    ('9', 'B'),
+    ('10', 'B+'),
+    ('11', 'A-'),
+    ('12', 'A'),
+    ('13', 'A+'),
 )
 
 CINT_BDAY_MONTH_CHOICES = (
@@ -257,8 +263,8 @@ class Source1(SubjectData):
     GTD_07 = models.IntegerField(null=True, blank=True)
     GTD_08 = models.IntegerField(null=True, blank=True)
     GTD_09 = models.IntegerField(null=True, blank=True)
-    GTD_10 = models.IntegerField(null=True, blank=True)
     GTD_11 = models.IntegerField(null=True, blank=True)
+    GTD_10 = models.IntegerField(null=True, blank=True)
     GTD_12 = models.IntegerField(null=True, blank=True)
     GTD_13 = models.IntegerField(null=True, blank=True)
     GTD_14 = models.IntegerField(null=True, blank=True)
