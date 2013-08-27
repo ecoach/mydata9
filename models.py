@@ -8,10 +8,6 @@ from djangotailoring.models import SubjectData
 
 # python ../manage.py makemtsmodel > MODEL.OUT (results go below here)
 
-INT_CHECK_BOX_CHOICES = (
-    ('1', 'True'),
-)
-
 CTEXT_EMPLOYMENT_STATUS_CHOICES = (
     ('No_Job', 'I do not have a job'),
     ('Part_Time', 'I work a part-time job (20 hours or less a week)'),
