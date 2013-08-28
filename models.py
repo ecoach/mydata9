@@ -159,6 +159,10 @@ CTEXT_INVOLVED_IN_CHOICES = (
     ('Other', 'Other Student Clubs/Organzations'),
 )
 
+TEXT_GTD_CHOICES = (
+    ('done', 'done'),
+)
+
 INT_MYELLOW_CHOICES = (
     ('0', 'none'),
     ('1', 'printed'),
@@ -250,21 +254,21 @@ class Source1(SubjectData):
     time_expectation = models.IntegerField(null=True, blank=True)
     Confidence = models.IntegerField(null=True, blank=True)
     confidence_grade = models.IntegerField(null=True, blank=True)
-    GTD_01 = models.IntegerField(null=True, blank=True)
-    GTD_02 = models.IntegerField(null=True, blank=True)
-    GTD_03 = models.IntegerField(null=True, blank=True)
-    GTD_04 = models.IntegerField(null=True, blank=True)
-    GTD_05 = models.IntegerField(null=True, blank=True)
-    GTD_06 = models.IntegerField(null=True, blank=True)
-    GTD_07 = models.IntegerField(null=True, blank=True)
-    GTD_08 = models.IntegerField(null=True, blank=True)
-    GTD_09 = models.IntegerField(null=True, blank=True)
-    GTD_11 = models.IntegerField(null=True, blank=True)
-    GTD_10 = models.IntegerField(null=True, blank=True)
-    GTD_12 = models.IntegerField(null=True, blank=True)
-    GTD_13 = models.IntegerField(null=True, blank=True)
-    GTD_14 = models.IntegerField(null=True, blank=True)
-    GTD_15 = models.IntegerField(null=True, blank=True)
+    GTD_01__done = models.NullBooleanField()
+    GTD_02__done = models.NullBooleanField()
+    GTD_03__done = models.NullBooleanField()
+    GTD_04__done = models.NullBooleanField()
+    GTD_05__done = models.NullBooleanField()
+    GTD_06__done = models.NullBooleanField()
+    GTD_07__done = models.NullBooleanField()
+    GTD_08__done = models.NullBooleanField()
+    GTD_09__done = models.NullBooleanField()
+    GTD_10__done = models.NullBooleanField()
+    GTD_11__done = models.NullBooleanField()
+    GTD_12__done = models.NullBooleanField()
+    GTD_13__done = models.NullBooleanField()
+    GTD_14__done = models.NullBooleanField()
+    GTD_15__done = models.NullBooleanField()
     gb_hw_practice = models.FloatField(null=True, blank=True)
     gb_hw01 = models.FloatField(null=True, blank=True)
     gb_hw02 = models.FloatField(null=True, blank=True)
