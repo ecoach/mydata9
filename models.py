@@ -7,6 +7,7 @@ from djangotailoring.models import SubjectData
 # Create your models here.
 
 # python ../manage.py makemtsmodel > MODEL.OUT (results go below here)
+# matching version 1712
 
 CTEXT_EMPLOYMENT_STATUS_CHOICES = (
     ('No_Job', 'I do not have a job'),
