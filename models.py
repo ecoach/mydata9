@@ -160,7 +160,7 @@ CTEXT_INVOLVED_IN_CHOICES = (
 )
 
 TEXT_GTD_CHOICES = (
-    ('done', 'done'),
+    ('done', '-'),
 )
 
 INT_MYELLOW_CHOICES = (
@@ -204,15 +204,14 @@ INT_SEMESTER_FREQ_CHOICES = (
 )
 
 INT_TO_LETTER_GOAL_GRADE_CHOICES = (
-    ('5', 'C- or lower'),
-    ('6', 'C'),
-    ('7', 'C+'),
-    ('8', 'B-'),
-    ('9', 'B'),
-    ('10', 'B+'),
-    ('11', 'A-'),
-    ('12', 'A'),
-    ('13', 'A+'),
+    ('1', 'C- or lower'),
+    ('2', 'C'),
+    ('3', 'C+'),
+    ('4', 'B-'),
+    ('5', 'B'),
+    ('6', 'B+'),
+    ('7', 'A-'),
+    ('8', 'A or A+'),
 )
 
 CINT_BDAY_MONTH_CHOICES = (
@@ -311,8 +310,12 @@ class Source1(SubjectData):
     gb_prelab10 = models.IntegerField(null=True, blank=True)
     gb_prelab11 = models.IntegerField(null=True, blank=True)
     gb_prelab12 = models.IntegerField(null=True, blank=True)
+    Exam1_Self_Advice = models.TextField(null=True, blank=True)
+    Exam2_Self_Advice = models.TextField(null=True, blank=True)
+    Permission_To_Use_Exam1_Self_Advice = models.IntegerField(null=True, blank=True)
+    Permission_To_Use_Exam2_Self_Advice = models.IntegerField(null=True, blank=True)
     GSI_Name = models.CharField(max_length=20, null=True, blank=True)
-    dist_values = models.CharField(max_length=20, null=True, blank=True)
+    dist_values = models.TextField(null=True, blank=True)
     Goal_Grade = models.IntegerField(null=True, blank=True)
     Expected_Grade = models.IntegerField(null=True, blank=True)
     mcalculator = models.IntegerField(null=True, blank=True)
