@@ -7,6 +7,7 @@ from djangotailoring.models import SubjectData
 # Create your models here.
 
 # python ../manage.py makemtsmodel > MODEL.OUT (results go below here)
+# matching version 1712
 
 CTEXT_EMPLOYMENT_STATUS_CHOICES = (
     ('No_Job', 'I do not have a job'),
@@ -31,11 +32,6 @@ CTEXT_COLLEGE_CHOICES = (
     ('Engineering', 'Engineering'),
     ('Kinesiology', 'Kinesiology'),
     ('Other', 'Other'),
-)
-
-OPT_OUT_CHOICES = (
-    ('0', 'Opt in'),
-    ('1', 'Opt out'),
 )
 
 CTEXT_GENDER_CHOICES = (
@@ -252,11 +248,6 @@ class Source1(SubjectData):
     # add meta property
     class Meta: 
         db_table = 'mydata_source1'
-    Reg_Enrolled = models.IntegerField(null=True, blank=True)
-    Reg_GPA = models.FloatField(null=True, blank=True)
-    Reg_Gender = models.CharField(max_length=5, null=True, blank=True)
-    Reg_Acad_Level = models.CharField(max_length=20, null=True, blank=True)
-    Signup_Opt_Out = models.IntegerField(null=True, blank=True)
     hw_hours = models.FloatField(null=True, blank=True)
     oh_expected = models.IntegerField(null=True, blank=True)
     study_partner = models.IntegerField(null=True, blank=True)
