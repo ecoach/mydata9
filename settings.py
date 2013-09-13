@@ -21,7 +21,7 @@ DPROJ_NAME = 'mydata9'
 MPROJ_NAME = 'mts9'
 COACH_NAME = 'Stats 250: Fall 2013'
 COACH_URL = 'coach9'
-COACH_EMAIL = 'statsecoach@gmail.com'
+COACH_EMAIL = 'ECoachHelpStats250@umich.edu'
 
 from os.path import abspath, dirname, join
 SETTINGS_PATH = abspath(dirname(__file__))
