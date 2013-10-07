@@ -260,6 +260,8 @@ class Source1(SubjectData):
     email_request_2 = models.IntegerField(null=True, blank=True)
     email_request_3 = models.IntegerField(null=True, blank=True)
     email_request_4 = models.IntegerField(null=True, blank=True)
+    like_about_ecoach = models.TextField(null=True, blank=True)
+    make_ecoach_better = models.TextField(null=True, blank=True)
     Signup_Opt_Out = models.IntegerField(null=True, blank=True)
     hw_hours = models.FloatField(null=True, blank=True)
     oh_expected = models.IntegerField(null=True, blank=True)
