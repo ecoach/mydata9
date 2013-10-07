@@ -137,7 +137,7 @@ INT_MTEXTBOOK_CHOICES = (
 )
 
 INT_SUBJECT_INTEREST_CHOICES = (
-    ('0', '0<br>Not at all interested'),
+    ('0', '0-Not at all interested'),
     ('1', '1'),
     ('2', '2'),
     ('3', '3'),
@@ -147,7 +147,7 @@ INT_SUBJECT_INTEREST_CHOICES = (
     ('7', '7'),
     ('8', '8'),
     ('9', '9'),
-    ('10', '10<br>Extremely interested'),
+    ('10', '10-Extremely interested'),
 )
 
 CTEXT_YES_NO_CHOICES = (
@@ -183,7 +183,7 @@ CTEXT_CLASS_STANDING_CHOICES = (
 )
 
 INT_CONFIDENCE_IN_ABLILITY_CHOICES = (
-    ('0', '0<br>Not at all confident'),
+    ('0', '0-Not at all confident'),
     ('1', '1'),
     ('2', '2'),
     ('3', '3'),
@@ -193,7 +193,7 @@ INT_CONFIDENCE_IN_ABLILITY_CHOICES = (
     ('7', '7'),
     ('8', '8'),
     ('9', '9'),
-    ('10', '10<br>Extremely confident'),
+    ('10', '10-Extremely confident'),
 )
 
 TEXT_GENDER_CHOICES = (
@@ -256,6 +256,10 @@ class Source1(SubjectData):
     Reg_GPA = models.FloatField(null=True, blank=True)
     Reg_Gender = models.CharField(max_length=5, null=True, blank=True)
     Reg_Acad_Level = models.CharField(max_length=20, null=True, blank=True)
+    email_request_1 = models.IntegerField(null=True, blank=True)
+    email_request_2 = models.IntegerField(null=True, blank=True)
+    email_request_3 = models.IntegerField(null=True, blank=True)
+    email_request_4 = models.IntegerField(null=True, blank=True)
     Signup_Opt_Out = models.IntegerField(null=True, blank=True)
     hw_hours = models.FloatField(null=True, blank=True)
     oh_expected = models.IntegerField(null=True, blank=True)
@@ -337,6 +341,43 @@ class Source1(SubjectData):
     mopenmilab = models.IntegerField(null=True, blank=True)
     mtextbook = models.IntegerField(null=True, blank=True)
     myellow = models.IntegerField(null=True, blank=True)
+    Lecture_Section = models.IntegerField(null=True, blank=True)
+    sleep_01 = models.IntegerField(null=True, blank=True)
+    sleep_02 = models.IntegerField(null=True, blank=True)
+    sleep_03 = models.IntegerField(null=True, blank=True)
+    sleep_04 = models.IntegerField(null=True, blank=True)
+    sleep_05 = models.IntegerField(null=True, blank=True)
+    sleep_06 = models.IntegerField(null=True, blank=True)
+    sleep_07 = models.IntegerField(null=True, blank=True)
+    sleep_08 = models.IntegerField(null=True, blank=True)
+    sleep_09 = models.IntegerField(null=True, blank=True)
+    sleep_10 = models.IntegerField(null=True, blank=True)
+    sleep_11 = models.IntegerField(null=True, blank=True)
+    sleep_12 = models.IntegerField(null=True, blank=True)
+    item01_01 = models.IntegerField(null=True, blank=True)
+    item01_02 = models.IntegerField(null=True, blank=True)
+    item01_03 = models.IntegerField(null=True, blank=True)
+    item01_04 = models.IntegerField(null=True, blank=True)
+    item01_05 = models.IntegerField(null=True, blank=True)
+    item01_06 = models.IntegerField(null=True, blank=True)
+    item01_07 = models.IntegerField(null=True, blank=True)
+    item01_08 = models.IntegerField(null=True, blank=True)
+    item01_09 = models.IntegerField(null=True, blank=True)
+    item01_10 = models.IntegerField(null=True, blank=True)
+    item01_11 = models.IntegerField(null=True, blank=True)
+    item01_12 = models.IntegerField(null=True, blank=True)
+    item02_01 = models.IntegerField(null=True, blank=True)
+    item02_02 = models.IntegerField(null=True, blank=True)
+    item02_03 = models.IntegerField(null=True, blank=True)
+    item02_04 = models.IntegerField(null=True, blank=True)
+    item02_05 = models.IntegerField(null=True, blank=True)
+    item02_06 = models.IntegerField(null=True, blank=True)
+    item02_07 = models.IntegerField(null=True, blank=True)
+    item02_08 = models.IntegerField(null=True, blank=True)
+    item02_09 = models.IntegerField(null=True, blank=True)
+    item02_10 = models.IntegerField(null=True, blank=True)
+    item02_11 = models.IntegerField(null=True, blank=True)
+    item02_12 = models.IntegerField(null=True, blank=True)
 
 class EmptySource(SubjectData):
     pass
