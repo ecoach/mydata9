@@ -462,6 +462,12 @@ INT_SEQ_GLO_09_CHOICES = (
     ('1', 'try to make connections between that subject and related subjects.'),
 )
 
+INT_INTEREST_AFTER_STATS250_CHOICES = (
+    ('0', 'taking another statistics course'),
+    ('1', 'learning more about majoring or minoring is statistics.'),
+    ('2', 'neither (but glad to have finished this statistics course using ECoach).'),
+)
+
 INT_PERMISSION_TO_USE_EXAM_2_SELF_ADVICE_CHOICES = (
     ('2', 'Yes, you may use my name and picture.'),
     ('1', 'Yes, you may use my name.'),
@@ -515,6 +521,15 @@ class Source1(SubjectData):
     # add meta property
     class Meta: 
         db_table = 'mydata_source1'
+    ECoach_helpful_study = models.IntegerField(null=True, blank=True)
+    ECoach_helpful_exam = models.IntegerField(null=True, blank=True)
+    ECoach_helpful_most = models.TextField(null=True, blank=True)
+    ECoach_would_change = models.TextField(null=True, blank=True)
+    ECoach_favorite_message = models.TextField(null=True, blank=True)
+    interest_after_STATS250 = models.IntegerField(null=True, blank=True)
+    Final_Course_Letter_Grade = models.CharField(max_length=20, null=True, blank=True)
+    Method_1_Grade = models.IntegerField(null=True, blank=True)
+    Method_2_Grade = models.IntegerField(null=True, blank=True)
     Reg_Enrolled = models.IntegerField(null=True, blank=True)
     Reg_GPA = models.FloatField(null=True, blank=True)
     Reg_Gender = models.CharField(max_length=5, null=True, blank=True)
