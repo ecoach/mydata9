@@ -25,7 +25,7 @@ COACH_EMAIL = 'ECoachHelpStats250@umich.edu'
 from os.path import abspath, dirname, join
 SETTINGS_PATH = abspath(dirname(__file__))
 DIR_PROJ = abspath(join(SETTINGS_PATH, '../')) + '/'
-DIR_NTS = DIR_PROJ + DPROJ_NAME + '/' + MPROJ_NAME + "/Static/mts/js/nts/"
+DIR_NTS = DIR_PROJ + MPROJ_NAME + "/Static/mts/js/nts/"
 DIR_UPLOAD_DATA = DIR_PROJ + DPROJ_NAME + "/uploads/"
 DIR_DOWNLOAD_DATA = DIR_PROJ + DPROJ_NAME + "/downloads/"
 DIR_MYDATA = DIR_PROJ + DPROJ_NAME + '/'
